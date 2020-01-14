@@ -35,9 +35,8 @@ def calculate_neighborhoods(distance, k_neighbors):
 
 def calculate_epsilon(distance, neighbor_distances):
   mean_neighbor_distance = np.mean(neighbor_distances, axis=1)
-  epsilon = np.zeros_like(distance)
+  epsilon = np.ones_like(distance)
   for i, distance_i in enumerate(distance):
-    epsilon[i, i] = mean_neighbor_distance[i] * 2 / 3
     for j, distance_i_j in enumerate(distance_i[i + 1:]):
       epsilon[i, j] = epsilon[j, i] = (mean_neighbor_distance[i] + mean_neighbor_distance[j] + distance_i_j) / 3
   return epsilon
