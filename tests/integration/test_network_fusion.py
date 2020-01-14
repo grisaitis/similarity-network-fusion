@@ -19,13 +19,11 @@ def test_makes_fused_network():
   x = random_state.uniform(size=n * p).reshape((n, p))
   mu = 0.5
   k_neighbors = 3
-  distance = calculate_distances(x)
-  assert np.allclose(distance, distance.T), "must be symmetric"
-  assert nonzero_except_diagonal(distance)
-  neighbor_indices, neighbor_distances = calculate_neighborhoods(distance, k_neighbors)
-  epsilon = calculate_epsilon(distance, neighbor_distances)
+  distances = calculate_distances(x)
+  neighbor_indices, neighbor_distances = calculate_neighborhoods(distances, k_neighbors)
+  epsilon = calculate_epsilon(distances, neighbor_distances)
   assert np.allclose(epsilon, epsilon.T), "must be symmetric"
-  weights = calculate_weights(distance, epsilon, mu)
+  weights = calculate_weights(distances, epsilon, mu)
   assert np.allclose(weights, weights.T), "must be symmetric"
   normalized_weights = calculate_normalized_weights(weights)
   assert np.allclose(normalized_weights, normalized_weights.T), "must be symmetric"
