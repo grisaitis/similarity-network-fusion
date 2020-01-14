@@ -4,7 +4,7 @@ This repo implements the paper
 
 >Wang, Bo, et al. "Similarity network fusion for aggregating data types on a genomic scale." Nature methods 11.3 (2014): 333.
 
-available at [nature.com](https://www.nature.com/articles/nmeth.2810) or [sci-hub](http://sci-hub.se/10.1038/nmeth.2810).
+available at [nature.com](https://www.nature.com/articles/nmeth.2810), [sci-hub](http://sci-hub.se/10.1038/nmeth.2810), or [Google Scholar](https://scholar.google.com/scholar?cluster=6520521584081572641).
 
 ## Installation
 
