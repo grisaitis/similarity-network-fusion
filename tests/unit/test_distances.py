@@ -27,3 +27,10 @@ def test_is_shaped_correctly():
   assert np.allclose(distances, distances.T), "must be symmetric"
   assert nonzero_except_diagonal(distances)
 
+def test_is_good_with_bigger_data():
+  random_state = np.random.RandomState(0)
+  n, p = 100, 40
+  x = random_state.uniform(size=n * p).reshape((n, p))
+  distances = calculate_distances(x)
+  assert np.allclose(distances, distances.T), "must be symmetric"
+  assert nonzero_except_diagonal(distances)
