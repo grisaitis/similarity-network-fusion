@@ -1,16 +1,5 @@
 [[package]]
 category = "main"
-description = "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
-name = "absl-py"
-optional = false
-python-versions = "*"
-version = "0.9.0"
-
-[package.dependencies]
-six = "*"
-
-[[package]]
-category = "main"
 description = "File support for asyncio."
 name = "aiofiles"
 optional = false
@@ -160,14 +149,6 @@ version = "0.3"
 
 [[package]]
 category = "main"
-description = "C implementation of Python 3 functools.lru_cache"
-name = "fastcache"
-optional = false
-python-versions = "*"
-version = "1.1.0"
-
-[[package]]
-category = "main"
 description = "Internationalized Domain Names in Applications (IDNA)"
 name = "idna"
 optional = false
@@ -252,35 +233,6 @@ version = ">=4.0.0"
 
 [package.extras]
 test = ["pytest (>=3.6.0)", "pytest-cov", "mock"]
-
-[[package]]
-category = "main"
-description = "Differentiate, compile, and transform Numpy code."
-name = "jax"
-optional = false
-python-versions = ">=3.5"
-version = "0.1.57"
-
-[package.dependencies]
-absl-py = "*"
-fastcache = "*"
-numpy = ">=1.12"
-opt_einsum = "*"
-
-[[package]]
-category = "main"
-description = "XLA library for JAX"
-name = "jaxlib"
-optional = false
-python-versions = "*"
-version = "0.1.37"
-
-[package.dependencies]
-absl-py = "*"
-numpy = ">=1.12"
-protobuf = ">=3.6.0"
-scipy = "*"
-six = "*"
 
 [[package]]
 category = "main"
@@ -630,21 +582,6 @@ python-versions = ">=3.5"
 version = "1.18.1"
 
 [[package]]
-category = "main"
-description = "Optimizing numpys einsum function"
-name = "opt-einsum"
-optional = false
-python-versions = ">=3.5"
-version = "3.1.0"
-
-[package.dependencies]
-numpy = ">=1.7"
-
-[package.extras]
-docs = ["sphinx (1.2.3)", "sphinxcontrib-napoleon", "sphinx-rtd-theme", "numpydoc"]
-tests = ["pytest", "pytest-cov", "pytest-pep8"]
-
-[[package]]
 category = "dev"
 description = "Core utilities for Python packages"
 name = "packaging"
@@ -756,18 +693,6 @@ version = "2.0.10"
 [package.dependencies]
 six = ">=1.9.0"
 wcwidth = "*"
-
-[[package]]
-category = "main"
-description = "Protocol Buffers"
-name = "protobuf"
-optional = false
-python-versions = "*"
-version = "3.11.2"
-
-[package.dependencies]
-setuptools = "*"
-six = ">=1.9"
 
 [[package]]
 category = "main"
@@ -1055,13 +980,10 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "3791d5b5d07af4d3ca449c6f1a7311723a565060daaf498da76ddeced5fcb2ee"
+content-hash = "17afd0d244b42c7b6f3170e80fe1423ea42980b754c12e5ba85908462915eb95"
 python-versions = "^3.8"
 
 [metadata.files]
-absl-py = [
-    {file = "absl-py-0.9.0.tar.gz", hash = "sha256:75e737d6ce7723d9ff9b7aa1ba3233c34be62ef18d5859e706b8fdc828989830"},
-]
 aiofiles = [
     {file = "aiofiles-0.4.0-py3-none-any.whl", hash = "sha256:1e644c2573f953664368de28d2aa4c89dfd64550429d0c27c4680ccd3aa4985d"},
     {file = "aiofiles-0.4.0.tar.gz", hash = "sha256:021ea0ba314a86027c166ecc4b4c07f2d40fc0f4b3a950d1868a0f2571c2bbee"},
@@ -1131,9 +1053,6 @@ entrypoints = [
     {file = "entrypoints-0.3-py2.py3-none-any.whl", hash = "sha256:589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19"},
     {file = "entrypoints-0.3.tar.gz", hash = "sha256:c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"},
 ]
-fastcache = [
-    {file = "fastcache-1.1.0.tar.gz", hash = "sha256:6de1b16e70335b7bde266707eb401a3aaec220fb66c5d13b02abf0eab8be782b"},
-]
 idna = [
     {file = "idna-2.8-py2.py3-none-any.whl", hash = "sha256:ea8b7f6188e6fa117537c3df7da9fc686d485087abf6ac197f9c46432f7e4a3c"},
     {file = "idna-2.8.tar.gz", hash = "sha256:c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407"},
@@ -1153,21 +1072,6 @@ ipython-genutils = [
 ipywidgets = [
     {file = "ipywidgets-7.5.1-py2.py3-none-any.whl", hash = "sha256:13ffeca438e0c0f91ae583dc22f50379b9d6b28390ac7be8b757140e9a771516"},
     {file = "ipywidgets-7.5.1.tar.gz", hash = "sha256:e945f6e02854a74994c596d9db83444a1850c01648f1574adf144fbbabe05c97"},
-]
-jax = [
-    {file = "jax-0.1.57.tar.gz", hash = "sha256:ac5caee5aaf820daed1f8ff206bb4c86388dccc443fe6265b5941adb2a654371"},
-]
-jaxlib = [
-    {file = "jaxlib-0.1.37-cp27-none-macosx_10_9_x86_64.whl", hash = "sha256:492fcec54da7d3cefc3264fe19c57c3745300c753561af571e608e81ecc14eb4"},
-    {file = "jaxlib-0.1.37-cp27-none-manylinux2010_x86_64.whl", hash = "sha256:f1797a3d8eafcafadf811e368ef44152c31283cd8fd91033b1fa56b97b14f645"},
-    {file = "jaxlib-0.1.37-cp35-none-macosx_10_9_x86_64.whl", hash = "sha256:f4c2b525a66e03e56139172aa602233c4325bb185b572e478d90b008d469fb1b"},
-    {file = "jaxlib-0.1.37-cp35-none-manylinux2010_x86_64.whl", hash = "sha256:9bbea84ebb4f9dec51fb24c887ffbd512a7e0bdbac3b3862e3672886080ea6fa"},
-    {file = "jaxlib-0.1.37-cp36-none-macosx_10_9_x86_64.whl", hash = "sha256:4a21c236466783787515f40a8faec3b730765f23c0aa7de579e9aa9c224b6749"},
-    {file = "jaxlib-0.1.37-cp36-none-manylinux2010_x86_64.whl", hash = "sha256:de0892e5f504159e5c5e2ad949e6233804f7877935cc80fd5414dc171fd4ffca"},
-    {file = "jaxlib-0.1.37-cp37-none-macosx_10_9_x86_64.whl", hash = "sha256:07aa5c52b95fe7c0e6286adf4b1030d96251fe0281ec058656f2fd65afe18464"},
-    {file = "jaxlib-0.1.37-cp37-none-manylinux2010_x86_64.whl", hash = "sha256:593b35e11c5fbb5c8c3bb54811a086d72c9801551e2a87137244446484398f0a"},
-    {file = "jaxlib-0.1.37-cp38-none-macosx_10_9_x86_64.whl", hash = "sha256:a4de8565dff010a64dc4e3a51401d60cad03183570971b38e61cc58cdc9f2726"},
-    {file = "jaxlib-0.1.37-cp38-none-manylinux2010_x86_64.whl", hash = "sha256:9319b9c1e4ea46388a77e607c9f8adb6d12bf80ca8a84f5002f49b0a61417a95"},
 ]
 jedi = [
     {file = "jedi-0.15.2-py2.py3-none-any.whl", hash = "sha256:1349c1e8c107095a55386628bb3b2a79422f3a2cab8381e34ce19909e0cf5064"},
@@ -1372,9 +1276,6 @@ numpy = [
     {file = "numpy-1.18.1-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:70a840a26f4e61defa7bdf811d7498a284ced303dfbc35acb7be12a39b2aa121"},
     {file = "numpy-1.18.1-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:17aa7a81fe7599a10f2b7d95856dc5cf84a4eefa45bc96123cbbc3ebc568994e"},
 ]
-opt-einsum = [
-    {file = "opt_einsum-3.1.0.tar.gz", hash = "sha256:edfada4b1d0b3b782ace8bc14e80618ff629abf53143e1e6bbf9bd00b11ece77"},
-]
 packaging = [
     {file = "packaging-20.0-py2.py3-none-any.whl", hash = "sha256:aec3fdbb8bc9e4bb65f0634b9f551ced63983a529d6a8931817d52fdd0816ddb"},
     {file = "packaging-20.0.tar.gz", hash = "sha256:fe1d8331dfa7cc0a883b49d75fc76380b2ab2734b220fbb87d774e4fd4b851f8"},
@@ -1430,27 +1331,6 @@ prompt-toolkit = [
     {file = "prompt_toolkit-2.0.10-py2-none-any.whl", hash = "sha256:e7f8af9e3d70f514373bf41aa51bc33af12a6db3f71461ea47fea985defb2c31"},
     {file = "prompt_toolkit-2.0.10-py3-none-any.whl", hash = "sha256:46642344ce457641f28fc9d1c9ca939b63dadf8df128b86f1b9860e59c73a5e4"},
     {file = "prompt_toolkit-2.0.10.tar.gz", hash = "sha256:f15af68f66e664eaa559d4ac8a928111eebd5feda0c11738b5998045224829db"},
-]
-protobuf = [
-    {file = "protobuf-3.11.2-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:3f509f7e50d806a434fe4a5fbf602516002a0f092889209fff7db82060efffc0"},
-    {file = "protobuf-3.11.2-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:4571da974019849201fc1ec6626b9cea54bd11b6bed140f8f737c0a33ea37de5"},
-    {file = "protobuf-3.11.2-cp35-cp35m-macosx_10_9_intel.whl", hash = "sha256:0329e86a397db2a83f9dcbe21d9be55a47f963cdabc893c3a24f4d3a8f117c37"},
-    {file = "protobuf-3.11.2-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:56bd1d84fbf4505c7b73f04de987eef5682e5752c811141b0186a3809bfb396f"},
-    {file = "protobuf-3.11.2-cp35-cp35m-win32.whl", hash = "sha256:919f0d6f6addc836d08658eba3b52be2e92fd3e76da3ce00c325d8e9826d17c7"},
-    {file = "protobuf-3.11.2-cp35-cp35m-win_amd64.whl", hash = "sha256:14d6ac53df9cb5bb87c4f91b677c1bc5cec9c0fd44327f367a3c9562de2877c4"},
-    {file = "protobuf-3.11.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:6e96dffaf4d0a9a329e528b353ba62fd9ef13599688723d96bc9c165d0b6871e"},
-    {file = "protobuf-3.11.2-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:6b5b947dc8b3f2aec0eaad65b0b5113fcd642c358c31357c647da6281ee31104"},
-    {file = "protobuf-3.11.2-cp36-cp36m-win32.whl", hash = "sha256:680c668d00b5eff08b86aef9e5ba9a705e621ea05d39071cfea8e28cb2400946"},
-    {file = "protobuf-3.11.2-cp36-cp36m-win_amd64.whl", hash = "sha256:9c7b19c30cf0644afd0e4218b13f637ce54382fdcb1c8f75bf3e84e49a5f6d0a"},
-    {file = "protobuf-3.11.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:d61b14a9090da77fe87e38ba4c6c43d3533dcbeb5d84f5474e7ac63c532dcc9c"},
-    {file = "protobuf-3.11.2-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:a2e6f57114933882ec701807f217df2fb4588d47f71f227c0a163446b930d507"},
-    {file = "protobuf-3.11.2-cp37-cp37m-win32.whl", hash = "sha256:0a7219254afec0d488211f3d482d8ed57e80ae735394e584a98d8f30a8c88a36"},
-    {file = "protobuf-3.11.2-cp37-cp37m-win_amd64.whl", hash = "sha256:a6b970a2eccfcbabe1acf230fbf112face1c4700036c95e195f3554d7bcb04c1"},
-    {file = "protobuf-3.11.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:d6faf5dbefb593e127463f58076b62fcfe0784187be8fe1aa9167388f24a22a1"},
-    {file = "protobuf-3.11.2-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:bc45641cbcdea068b67438244c926f9fd3e5cbdd824448a4a64370610df7c593"},
-    {file = "protobuf-3.11.2-py2.7.egg", hash = "sha256:557686c43fbd04f5f7c533f00feee9a37dcca7b5896e3ae3664a33864e6dd546"},
-    {file = "protobuf-3.11.2-py2.py3-none-any.whl", hash = "sha256:180fc364b42907a1d2afa183ccbeffafe659378c236b1ec3daca524950bb918d"},
-    {file = "protobuf-3.11.2.tar.gz", hash = "sha256:3d7a7d8d20b4e7a8f63f62de2d192cfd8b7a53c56caba7ece95367ca2b80c574"},
 ]
 ptyprocess = [
     {file = "ptyprocess-0.6.0-py2.py3-none-any.whl", hash = "sha256:d7cc528d76e76342423ca640335bd3633420dc1366f258cb31d05e865ef5ca1f"},
