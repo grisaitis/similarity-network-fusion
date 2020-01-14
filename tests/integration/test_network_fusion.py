@@ -58,9 +58,15 @@ def calculate_local_similarities(weights, neighbor_indices):
   similarity = weights * inverse_neighborhood_weights
 
 
-def assert_is_symmetrix(a, rtol=1e-05, atol=1e-08):
-  assert np.allclose(a, a.T, rtol=rtol, atol=atol)
-  return
+def is_symmetric_matrix(a):
+  return np.rank(a) == 2 \
+    and a.shape[0] == a.shape[1] \
+    and np.allclose(a, a.T)
+
+
+def nonzero_except_diagonal(a):
+  a_plus_identity = a + np.identity(a.shape[0], dtype=a.dtype)
+  return a_plus_identity.all() and not a.all()
 
 
 def test_makes_fused_network():
@@ -70,10 +76,13 @@ def test_makes_fused_network():
   mu = 0.5
   k_neighbors = 3
   distance = calculate_distances(x)
-  assert distance.shape == (n, n)
-  assert_is_symmetrix(distance)
+  assert is_symmetric_matrix(distance)
+  assert nonzero_except_diagonal(distance)
   neighbor_indices, neighbor_distances = calculate_neighborhoods(distance, k_neighbors)
   epsilon = calculate_epsilon(distance, neighbor_distances)
+  assert is_symmetric_matrix(epsilon)
   weights = np.exp(-distance * distance / mu / epsilon)
+  assert is_symmetric_matrix(weights)
   normalized_weights = calculate_normalized_weights(weights)
+  assert is_symmetric_matrix(normalized_weights)
   local_similarities = calculate_local_similarities(weights, neighbor_indices)
