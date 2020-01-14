@@ -1,4 +1,3 @@
-import pytest
 import jax.numpy as np
 
 from network_fusion.similarity_kernel import SimilarityKernel
