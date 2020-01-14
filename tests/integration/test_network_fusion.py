@@ -10,15 +10,7 @@ from network_fusion.normalized_weights import calculate_normalized_weights
 from network_fusion.weights import calculate_weights
 
 
-def is_symmetric_matrix(a):
-  return np.rank(a) == 2 \
-    and a.shape[0] == a.shape[1] \
-    and np.allclose(a, a.T)
-
-
-def nonzero_except_diagonal(a):
-  a_plus_identity = a + np.identity(a.shape[0], dtype=a.dtype)
-  return a_plus_identity.all() and not a.all()
+from tests.helpers import nonzero_except_diagonal
 
 
 def test_makes_fused_network():
@@ -28,15 +20,15 @@ def test_makes_fused_network():
   mu = 0.5
   k_neighbors = 3
   distance = calculate_distances(x)
-  assert is_symmetric_matrix(distance)
+  assert np.allclose(distance, distance.T), "must be symmetric"
   assert nonzero_except_diagonal(distance)
   neighbor_indices, neighbor_distances = calculate_neighborhoods(distance, k_neighbors)
   epsilon = calculate_epsilon(distance, neighbor_distances)
-  assert is_symmetric_matrix(epsilon)
+  assert np.allclose(epsilon, epsilon.T), "must be symmetric"
   weights = calculate_weights(distance, epsilon, mu)
-  assert is_symmetric_matrix(weights)
+  assert np.allclose(weights, weights.T), "must be symmetric"
   normalized_weights = calculate_normalized_weights(weights)
-  assert is_symmetric_matrix(normalized_weights)
+  assert np.allclose(normalized_weights, normalized_weights.T), "must be symmetric"
   local_similarities = calculate_local_similarities(weights, neighbor_indices)
 
 
