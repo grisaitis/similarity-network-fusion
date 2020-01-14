@@ -1,11 +1,10 @@
 import jax.numpy as np
 import pytest
 
-from network_fusion.similarity_kernel import SimilarityKernel
-
 
 @pytest.mark.skip(reason="still figuring out architecture")
 def test_similarity_kernel():
+  from network_fusion.similarity_kernel import SimilarityKernel
   kernel = SimilarityKernel(mu=1.0)
   x = np.array([0])
   assert kernel(x, x) == 1
