@@ -16,8 +16,8 @@ def calculate_distances(x: np.ndarray):
   n = x.shape[0]
   distance = np.zeros(shape=(n, n), dtype=x.dtype)
   for i, x_i in enumerate(x):
-    for j, x_j in enumerate(x[i + 1:]):
-      distance[i, j] = distance[j, i] = spatial.distance.euclidean(x_i, x_j)
+    for j in range(i + 1, n):
+      distance[i, j] = distance[j, i] = spatial.distance.euclidean(x_i, x[j])
   return distance
 
 
