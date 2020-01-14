@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def calculate_epsilon(distance, neighbor_distances):
   mean_neighbor_distance = np.mean(neighbor_distances, axis=1)
   epsilon = np.ones_like(distance)

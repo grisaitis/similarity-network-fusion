@@ -1,3 +1,8 @@
+import heapq
+
+import numpy as np
+
+
 def calculate_neighborhoods(distance, k_neighbors):
   n = distance.shape[0]
   neighbor_indices = np.empty((n, k_neighbors), dtype=np.uint32)
