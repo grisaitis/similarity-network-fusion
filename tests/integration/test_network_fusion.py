@@ -25,11 +25,7 @@ def calculate_neighborhoods(distance, k_neighbors):
   n = distance.shape[0]
   neighbor_indices = np.empty((n, k_neighbors), dtype=np.uint32)
   neighbor_distances = np.empty((n, k_neighbors), dtype=distance.dtype)
-  print(distance)
   for i, distance_i in enumerate(distance):
-    print(type(distance_i))
-    print(distance_i)
-    print("cookie dough")
     distances_from_i_excluding_i = \
       [(distance_i_j, j) for j, distance_i_j in enumerate(distance_i) if i != j]
     distances_and_neighbors = heapq.nsmallest(k_neighbors, distances_from_i_excluding_i)
@@ -41,6 +37,7 @@ def calculate_epsilon(distance, neighbor_distances):
   mean_neighbor_distance = np.mean(neighbor_distances, axis=1)
   epsilon = np.zeros_like(distance)
   for i, distance_i in enumerate(distance):
+    epsilon[i, i] = mean_neighbor_distance[i] * 2 / 3
     for j, distance_i_j in enumerate(distance_i[i + 1:]):
       epsilon[i, j] = epsilon[j, i] = (mean_neighbor_distance[i] + mean_neighbor_distance[j] + distance_i_j) / 3
   return epsilon
