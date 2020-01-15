@@ -6,10 +6,10 @@ def calculate_distances(x: np.ndarray):
   """Calculates euclidean distances between each row of x
 
   Arguments:
-      x {np.ndarray} -- a matrix with n rows
+    x {np.ndarray} -- a matrix with n rows
 
   Returns:
-      [type] -- a symmetric matrix of shape (n, n)
+    [type] -- a symmetric matrix of shape (n, n)
   """
   n = x.shape[0]
   distance = np.zeros(shape=(n, n), dtype=x.dtype)
