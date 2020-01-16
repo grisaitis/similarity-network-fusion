@@ -1,6 +1,5 @@
 import numpy as np
 
 
-def calculate_weights(distance, epsilon, mu):
-    weights = np.exp(-distance * distance / mu / epsilon)
-    return weights
+def calculate_weights(distances, epsilon, mu):
+    return np.exp(-distances * distances / (mu * epsilon))
