@@ -1,7 +1,11 @@
 {
-    "editor.tabSize": 2,
     "python.pythonPath": "/Users/william/Library/Caches/pypoetry/virtualenvs/network-fusion-iZIzPLqh-py3.8/bin/python",
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false
 }
