@@ -2,7 +2,7 @@ import numpy as np
 import scipy.spatial as spatial
 
 
-def calculate_distancess(x: np.ndarray):
+def calculate_distances(x: np.ndarray):
     """Calculates euclidean distancess between each row of x
 
     Arguments:
