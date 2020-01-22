@@ -38,12 +38,13 @@ def test_is_correct_value_bigger():
     assert w[3, 2] == np.exp(-1 ** 2 / (mu * ((1.5 + 4 + 1) / 3)))
 
 
+@pytest.mark.skip("WIP - changing input data")
 def test_mu_changes_weights():
     rs = np.random.RandomState(0)
     distances = rs.uniform(size=100).reshape((10, 10))
     mu_1, mu_2 = 0.4, 0.6
     k = 1
-    neighbor_distances = np.array([[2], [2], [3]])
+    neighbor_distances = np.array([2, 2, 3])
     neighbor_indices = np.array([[1], [0], [0]])
     epsilon = calculate_epsilon(distances, neighbor_distances)
     weights_1 = calculate_weights(distances, epsilon, mu_1)
