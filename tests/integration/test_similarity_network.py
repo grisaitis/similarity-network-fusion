@@ -1,13 +1,32 @@
 import numpy as np
+import pytest
 
 from network_fusion.distances import calculate_distances
+from network_fusion.epsilon import calculate_epsilon
 from network_fusion.local_similarities import calculate_local_similarities
 from network_fusion.neighborhoods import calculate_neighborhoods
-from network_fusion.epsilon import calculate_epsilon
 from network_fusion.normalized_weights import calculate_normalized_weights
+from network_fusion.similarity_network import SimilarityNetwork
 from network_fusion.weights import calculate_weights
+from tests.helpers.fake_data import make_fake_data
 
 
+def test_make_network_from_features():
+    n, p, k, mu = 10, 1, 5, 0.4
+    fake_data = make_fake_data(n, p)
+    net = SimilarityNetwork.from_features(fake_data, k, mu)
+    assert net.k == k
+    assert net.mu == mu
+    assert net.weights.shape == (n, n)
+    assert net.similarities.shape == (n, n)
+
+
+@pytest.mark.skip("not implemented yet")
+def test_k_changes_weights():
+    pass
+
+
+@pytest.mark.skip("old")
 def test_local_similarities():
     random_state = np.random.RandomState(0)
     n, p = 5, 4
