@@ -2,7 +2,7 @@
 name = "network-fusion"
 version = "0.1.0"
 description = ""
-authors = ["William C Grisaitis <william@grisait.is>"]
+authors = ["William C Grisaitis <wgrisaitis@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
