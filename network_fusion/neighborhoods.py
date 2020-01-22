@@ -4,6 +4,15 @@ import numpy as np
 
 
 def calculate_neighborhoods(distances, k_neighbors):
+    """Calculate neighbor distances and indices of neighbors for each instance
+    
+    Arguments:
+        distances {numpy.ndarray} -- pairwise distance matrix (symmetric)
+        k_neighbors {int} -- size to use for neighborhoods
+    
+    Returns:
+        (numpy.ndarray, numpy.ndarray) -- neighbor indices, neighbor distances
+    """
     n = distances.shape[0]
     neighbor_indices = np.empty((n, k_neighbors), dtype=np.uint32)
     neighbor_distances = np.empty((n, k_neighbors), dtype=distances.dtype)
