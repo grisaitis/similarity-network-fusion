@@ -5,11 +5,11 @@ import numpy as np
 
 def calculate_neighborhoods(distances, k_neighbors):
     """Calculate neighbor distances and indices of neighbors for each instance
-    
+
     Arguments:
         distances {numpy.ndarray} -- pairwise distance matrix (symmetric)
         k_neighbors {int} -- size to use for neighborhoods
-    
+
     Returns:
         (numpy.ndarray, numpy.ndarray) -- neighbor indices, neighbor distances
     """
