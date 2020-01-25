@@ -11,6 +11,21 @@ from network_fusion.weights import calculate_weights
 from tests.helpers.fake_data import make_fake_data
 
 
+@pytest.mark.skip("Just an idea")
+def test_networks_can_fuse():
+    net = SimilarityNetwork(s, p)
+    other_nets = [SimilarityNetwork(), SimilarityNetwork()]
+    new_net = net.fuse_with(other_nets)
+
+
+@pytest.mark.skip("WIP")
+def test_make_fused_net():
+    network_fuser = NetworkFuser()
+    networks = (
+        SimilarityNetwork())
+    fuser.fuse(networks)
+
+
 def test_make_network_from_features():
     n, p, k, mu = 10, 1, 5, 0.4
     fake_data = make_fake_data(n, p)
@@ -22,7 +37,12 @@ def test_make_network_from_features():
 
 
 @pytest.mark.skip("not implemented yet")
-def test_k_changes_weights():
+def test_make_network_from_pairwise_distances():
+    pass
+
+
+@pytest.mark.skip("not implemented yet")
+def test_make_network_from_pairwise_similarities():
     pass
 
 
